@@ -1,0 +1,86 @@
+---
+import "../styles/global.css";
+import { Facebook, Instagram, ShoppingBag, Twitter } from "lucide-astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/logo_kk.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>{title} | Karai Crunch</title>
+    <meta name="description" content="Premium packaged snacks delivered locally across India. Fresh, crunchy, and delicious." />
+  </head>
+  <body>
+    <div class="announcement-bar flex min-h-9 items-center justify-center px-4 text-center text-xs font-medium tracking-wide">
+      <span class="mr-2 text-amber-300" aria-hidden="true">✦</span>
+      Karaikudi heritage · Chettinad-inspired flavours · Made for Chennai
+      <span class="ml-2 text-amber-300" aria-hidden="true">✦</span>
+    </div>
+    <nav class="site-nav sticky top-0 z-50 border-b">
+      <div class="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <a href="/" class="flex items-center" aria-label="Karai Crunch home">
+          <img src="/images/logo_kk.svg" alt="" aria-hidden="true" class="h-14 w-14 shrink-0 rounded-full object-cover shadow-sm" />
+          <span class="ml-3 flex flex-col leading-tight">
+            <span class="font-serif text-lg font-bold tracking-tight text-brand-dark">Karai <span class="text-brand-primary">Crunch</span></span>
+            <span class="mt-1 text-[0.58rem] font-semibold uppercase tracking-[0.12em] text-stone-600">Taste of Chettinad</span>
+          </span>
+        </a>
+        <div class="hidden items-center space-x-8 font-medium text-brand-dark md:flex">
+          <a href="/" class="transition-colors hover:text-brand-primary">Home</a>
+          <a href="#products" class="transition-colors hover:text-brand-primary">Shop</a>
+          <a href="#story" class="transition-colors hover:text-brand-primary">Our Story</a>
+          <a href="#contact" class="transition-colors hover:text-brand-primary">Contact</a>
+        </div>
+        <a href="https://wa.me/910000000000?text=Hi! I would like to order some snacks." 
+           aria-label="Order now via WhatsApp" title="Order now via WhatsApp"
+           class="icon-link inline-flex h-11 w-11 items-center justify-center rounded-full text-brand-primary transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary">
+          <ShoppingBag size={22} strokeWidth={2} aria-hidden="true" />
+        </a>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-brand-dark py-14 text-stone-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <img src="/images/logo_kk.svg" alt="" aria-hidden="true" class="mx-auto mb-3 h-40 w-40 rounded-full object-cover shadow-lg" />
+        <p class="mb-2 font-serif text-2xl font-bold text-[#fff0cf]">Karai Crunch</p>
+        <p class="mb-5 text-xs font-medium uppercase tracking-[0.16em] text-amber-200">Taste of Chettinad, crafted with tradition</p>
+        <p class="mb-6 max-w-md mx-auto text-sm opacity-80">
+          Delivering premium, handcrafted packaged snacks across [Your City/Delivery Area], India. 
+          Bringing the crunch to your doorstep.
+        </p>
+        <nav aria-label="Social media" class="social-ribbon mx-auto mb-8 flex w-fit flex-wrap items-center justify-center gap-2 rounded-full border px-3 py-2">
+          <a href="#" aria-label="Instagram" title="Instagram" class="social-link group inline-flex items-center gap-2 rounded-full px-4 py-2 transition-colors">
+            <Instagram size={19} strokeWidth={1.8} aria-hidden="true" />
+            <span class="text-sm font-medium">Instagram</span>
+          </a>
+          <span class="social-divider h-5 w-px" aria-hidden="true"></span>
+          <a href="#" aria-label="Facebook" title="Facebook" class="social-link group inline-flex items-center gap-2 rounded-full px-4 py-2 transition-colors">
+            <Facebook size={19} strokeWidth={1.8} aria-hidden="true" />
+            <span class="text-sm font-medium">Facebook</span>
+          </a>
+          <span class="social-divider h-5 w-px" aria-hidden="true"></span>
+          <a href="#" aria-label="Twitter" title="Twitter" class="social-link group inline-flex items-center gap-2 rounded-full px-4 py-2 transition-colors">
+            <Twitter size={19} strokeWidth={1.8} aria-hidden="true" />
+            <span class="text-sm font-medium">Twitter</span>
+          </a>
+        </nav>
+        <p class="text-xs opacity-50">&copy; 2026 Karai Crunch. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

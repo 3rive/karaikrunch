@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 112" role="img" aria-labelledby="title">
+  <title id="title">Karai Crunch</title>
+  <g transform="translate(4 5)">
+    <circle cx="51" cy="51" r="49" fill="#fff5df"/>
+    <path d="M16 59h70l-8 23c-2 7-8 11-15 11H39c-7 0-13-4-15-11z" fill="#a84426"/>
+    <path d="M11 57c0-5 18-10 40-10s40 5 40 10-18 10-40 10-40-5-40-10z" fill="#d56b32"/>
+    <g fill="#fff2d1" stroke="#e5c99e" stroke-width="2">
+      <path d="M26 48c-3-7 3-14 10-13 2-6 11-7 14-1 6-1 10 6 7 11-2 5-6 7-14 6-9 2-15 1-17-3z"/>
+      <path d="M47 43c-2-6 3-12 9-11 1-5 9-6 11-1 5-1 8 5 5 9-2 4-5 6-12 5-7 2-12 1-13-2z"/>
+      <path d="M63 50c-2-6 3-12 9-11 1-5 9-6 11-1 5-1 8 5 5 9-2 4-5 6-12 5-7 2-12 1-13-2z"/>
+    </g>
+    <g fill="#687b42">
+      <path d="M23 31c-1-10 6-17 17-17-1 10-7 16-17 17z"/>
+      <path d="M76 32c1-9 8-14 17-13-2 9-8 14-17 13z"/>
+    </g>
+    <path d="M28 29l8-8m47 10 9-7" fill="none" stroke="#4f6337" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <text x="119" y="53" fill="#fff5df" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" letter-spacing=".2">Karai</text>
+  <text x="120" y="90" fill="#fff5df" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="800" letter-spacing="5">CRUNCH</text>
+  <path d="M438 37c4 0 6 3 6 7s-2 7-6 7-6-3-6-7 2-7 6-7zm22 13c4 0 6 3 6 7s-2 7-6 7-6-3-6-7 2-7 6-7zm22-13c4 0 6 3 6 7s-2 7-6 7-6-3-6-7 2-7 6-7z" fill="#e6ae4e"/>
+</svg>

@@ -1,0 +1,339 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { products } from "../content/products/data";
+import { ArrowDown, ChevronLeft, ChevronRight, Leaf, MessageCircle, MessageSquareText, PackageCheck, Truck } from "lucide-astro";
+
+const whatsappNumber = "919500925110"; // REPLACE THIS
+const snackPosters = [
+  { name: "Adhirasam", image: "/images/Adhirasam_Poster.jpeg", alt: "Karai Crunch Adhirasam poster featuring traditional adhirasam sweets" },
+  { name: "Chinna Seedai", image: "/images/Chinna_Seedai_Poster.jpeg", alt: "Karai Crunch Chinna Seedai poster with a bowl of seedai" },
+  { name: "Maavu Urundai", image: "/images/Maavu_Poster.jpeg", alt: "Karai Crunch Maavu Urundai poster featuring traditional sweet balls" },
+  { name: "Managolam", image: "/images/ManaKolam_Poster.jpeg", alt: "Karai Crunch Managolam poster with a serving of the snack" },
+  { name: "Seepu Seedai", image: "/images/Seepu_Seedai_Poster.jpeg", alt: "Karai Crunch Seepu Seedai poster featuring ridged seedai" },
+  { name: "Sweet Seedai", image: "/images/Sweet_seesdai_poster.jpeg", alt: "Karai Crunch Sweet Seedai poster featuring the traditional sweet" },
+];
+const snackGallery = [
+  { name: "Murukku", image: "/images/Murukku.jpeg", alt: "Golden murukku arranged on a brass plate" },
+  { name: "Tenkuzhal", image: "/images/Mini_Thenkuzhal.jpeg", alt: "A bowl filled with delicate thenkuzhal snack coils" },
+  { name: "Laddu", image: "/images/Laddu.jpeg", alt: "Round laddus served on a brass plate" },
+  { name: "Maavu urundai", image: "/images/ML_orig.jpeg", alt: "Pale maavu urundai piled in a brass bowl" },
+  { name: "Seepu seedai", image: "/images/Seepu.jpeg", alt: "Rows of ridged seepu seedai on a brass plate" },
+  { name: "Sev", image: "/images/Sev.jpeg", alt: "A serving of crisp sev in a brass bowl" },
+  { name: "Managolam", image: "/images/Managolam.jpeg", alt: "Golden managolam snack pieces" },
+  { name: "Sweet seedai", image: "/images/sseedai.jpeg", alt: "Brown sweet seedai served in a brass bowl" },
+  { name: "Seedai", image: "/images/Seedai.jpeg", alt: "A bowl of small, round seedai snacks" },
+  { name: "Traditional murukku", image: "/images/KM.jpeg", alt: "Murukku coils arranged in a brass vessel" },
+];
+---
+
+<MainLayout title="Premium Snacks Delivered Local">
+  <!-- Hero Section -->
+  <section class="hero-section relative flex min-h-[48vh] items-center justify-center overflow-hidden md:min-h-[54vh]">
+    <div class="hero-sketch-layer absolute inset-0">
+      <img src="/images/hero-snack-sketch.png" alt="" class="h-full w-full object-cover" />
+    </div>
+    <img src="/images/kolam-motif.svg" alt="" aria-hidden="true" class="kolam-hero absolute right-[4%] top-[10%] h-36 w-36 sm:h-44 sm:w-44 md:h-64 md:w-64" />
+    <div class="relative z-10 mx-auto max-w-4xl px-4 py-12 text-center sm:py-14 md:py-16">
+      <p class="eyebrow mb-4">Kolam at the doorstep, Karaikudi in the flavour</p>
+      <h1 class="mb-4 text-4xl font-bold leading-tight text-brand-dark sm:text-5xl md:text-6xl">
+        A taste of <span class="text-brand-primary">Karaikudi</span>, made to crunch
+      </h1>
+      <p class="mx-auto mb-7 max-w-2xl text-base leading-relaxed text-stone-700 sm:text-lg">
+        Inspired by Chettinad kitchens, festive snack tins, and the welcoming kolams of home. Made with love, served with crunch.
+      </p>
+      <div class="flex justify-center gap-4">
+        <a href="#products" aria-label="Explore catalogue" title="Explore catalogue" class="icon-link inline-flex h-12 w-12 items-center justify-center rounded-full text-brand-primary transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary">
+          <ArrowDown size={21} strokeWidth={2} aria-hidden="true" />
+        </a>
+        <a href={`https://wa.me/${whatsappNumber}?text=Hello! I want to see your snack menu.`} aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp"
+           class="icon-link inline-flex h-12 w-12 items-center justify-center rounded-full text-brand-primary transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary">
+          <MessageCircle size={21} strokeWidth={2} aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Karaikudi Heritage -->
+  <section aria-label="Karaikudi and Chettinad inspiration" class="heritage-banner relative overflow-hidden border-y border-[#9d632d] px-4 py-7 sm:py-9">
+    <div class="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center gap-5 text-center sm:flex-row sm:gap-8 sm:text-left">
+      <img
+        src="/images/chettinad-heritage.svg"
+        alt="Illustration of a traditional Chettinad mansion with a tiled roof, carved pillars, and a central courtyard"
+        class="h-20 w-36 shrink-0 sm:h-24 sm:w-44"
+        loading="lazy"
+        decoding="async"
+      />
+      <div>
+        <p class="heritage-eyebrow mb-1">Inspired by Karaikudi</p>
+        <h2 class="font-serif text-xl font-bold sm:text-2xl">Chettinad roots, a warm Chennai welcome</h2>
+        <p class="mt-1 text-sm">The grand mansions, welcoming thresholds, and generous tables of the Chettinad region inspire our story.</p>
+      </div>
+      <img src="/images/kolam-motif.svg" alt="" aria-hidden="true" class="hidden h-16 w-16 shrink-0 opacity-40 sm:block" />
+    </div>
+  </section>
+
+  <!-- Shop Opening Invitation -->
+  <section aria-labelledby="opening-invitation-title" class="kolam-pattern-section relative overflow-hidden border-b-4 border-[#7a3924] bg-[#ead5b2] px-4 py-12 sm:py-16">
+    <div class="relative z-10 mx-auto max-w-6xl">
+      <div class="mb-6 text-center">
+        <p class="eyebrow mb-2">You're warmly invited</p>
+        <h2 id="opening-invitation-title" class="text-3xl font-bold text-brand-dark sm:text-4xl">Celebrate our grand opening</h2>
+        <p class="mt-3 text-sm font-medium text-stone-700 sm:text-base">Tuesday, October 20 · Ramapuram, Chennai</p>
+      </div>
+      <a
+        href="/images/IMG-20261019-WA0030.jpg"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open the full-size Karai Crunch grand opening invitation"
+        class="opening-invitation-link mx-auto block overflow-hidden rounded-2xl border-4 border-[#c99b53] bg-[#fff3dc] shadow-xl focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-brand-primary"
+      >
+        <img
+          src="/images/IMG-20261019-WA0030.jpg"
+          alt="Karai Crunch grand opening invitation: Tuesday, October 20, at Kalasathamman Koil Street, Ramapuram, Chennai. Special opening offers and sampling."
+          class="block h-auto w-full"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+      <p class="mt-3 text-center text-xs text-stone-600">Tap the invitation to view it full size.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="shop-band kolam-pattern-section relative overflow-hidden border-y-4 border-[#7a3924] py-12">
+    <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 text-center md:grid-cols-3 md:gap-12">
+      <div class="p-6">
+        <div class="feature-icon mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"><Truck size={27} strokeWidth={1.7} aria-hidden="true" /></div>
+        <h3 class="text-xl font-bold mb-3">Fast Local Delivery</h3>
+        <p class="text-stone-600">Get your snacks delivered within hours in [Your Delivery Area].</p>
+      </div>
+      <div class="p-6">
+        <div class="feature-icon mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"><Leaf size={27} strokeWidth={1.7} aria-hidden="true" /></div>
+        <h3 class="text-xl font-bold mb-3">Premium Quality</h3>
+        <p class="text-stone-600">Using only the finest ingredients and artisanal roasting methods.</p>
+      </div>
+      <div class="p-6">
+        <div class="feature-icon mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"><PackageCheck size={27} strokeWidth={1.7} aria-hidden="true" /></div>
+        <h3 class="text-xl font-bold mb-3">Eco-Friendly Packing</h3>
+        <p class="text-stone-600">Sustainable packaging to keep your snacks fresh and the planet clean.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Catalogue -->
+  <section id="products" class="kolam-pattern-section relative overflow-hidden border-b-4 border-[#d2a550] bg-[#dfc494] py-16">
+    <div class="relative z-10 mx-auto max-w-7xl px-4">
+      <div class="text-center mb-16">
+        <p class="eyebrow mb-3">A little Karaikudi in every bite</p>
+        <h2 class="mb-4 text-4xl font-bold text-brand-dark">Snacks for the family table</h2>
+        <p class="text-stone-600 max-w-2xl mx-auto">Bold spice, familiar comforts, and something special to pass around with your evening coffee.</p>
+      </div>
+
+      <section class="poster-showcase mb-14 overflow-hidden rounded-[2rem] border p-5 shadow-xl sm:p-8 lg:p-10" data-poster-slider aria-label="Karai Crunch snack posters">
+        <div class="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="poster-eyebrow mb-2">A taste of our tradition</p>
+            <h3 class="text-2xl font-bold text-brand-dark sm:text-3xl">From our snack collection</h3>
+          </div>
+          <p class="max-w-sm text-sm leading-relaxed text-stone-700">A few favourites from the Karai Crunch table, made for sharing and savouring.</p>
+        </div>
+
+        <div class="poster-slider-frame relative">
+          <div class="poster-slides">
+            {snackPosters.map((poster, index) => (
+              <article class="poster-slide" data-poster-slide role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${snackPosters.length}: ${poster.name}`} hidden={index !== 0}>
+                <img
+                  src={poster.image}
+                  alt={poster.alt}
+                  class="poster-slide-image"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                />
+              </article>
+            ))}
+          </div>
+          <button type="button" class="poster-control poster-previous" data-poster-previous aria-label="Show previous snack poster" hidden>
+            <ChevronLeft size={22} strokeWidth={2.2} aria-hidden="true" />
+          </button>
+          <button type="button" class="poster-control poster-next" data-poster-next aria-label="Show next snack poster" hidden>
+            <ChevronRight size={22} strokeWidth={2.2} aria-hidden="true" />
+          </button>
+        </div>
+
+        <div class="mt-5 flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <p class="poster-caption text-sm font-semibold text-brand-dark" data-poster-caption aria-live="polite">{snackPosters[0].name}</p>
+          <div class="poster-pagination flex items-center justify-center gap-2" role="group" aria-label="Choose a snack poster">
+            {snackPosters.map((poster, index) => (
+              <button
+                type="button"
+                class="poster-dot"
+                data-poster-dot={index}
+                aria-label={`Show ${poster.name} poster`}
+                aria-pressed={index === 0 ? "true" : "false"}
+                hidden
+              ></button>
+            ))}
+          </div>
+          <p class="poster-hint text-xs text-stone-600">Use the arrows or dots to browse</p>
+        </div>
+      </section>
+
+      <div class="mb-12">
+        <div class="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="eyebrow mb-2">A closer look at our snacks</p>
+            <h3 class="text-2xl font-bold text-brand-dark sm:text-3xl">From the Karai Crunch snack table</h3>
+          </div>
+          <p class="max-w-xl text-sm leading-relaxed text-stone-700">A selection of savoury favourites and traditional sweets from our collection.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {snackGallery.map((snack) => (
+            <figure class="snack-photo-card group overflow-hidden rounded-2xl border">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img
+                  src={snack.image}
+                  alt={snack.alt}
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption class="px-3 py-2 text-sm font-semibold text-brand-dark sm:px-4">{snack.name}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {products.map((product) => (
+          <div class="product-card group overflow-hidden rounded-2xl border transition-all duration-300">
+            <div class="product-image relative h-64 overflow-hidden">
+              <img src={product.image} alt={product.imageAlt} class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
+            </div>
+            <div class="p-6">
+              <div class="mb-2 text-xs font-bold uppercase tracking-wider text-brand-primary">{product.category}</div>
+              <h3 class="mb-5 text-xl font-bold transition-colors group-hover:text-brand-primary">{product.name}</h3>
+              <div class="flex items-center justify-between gap-3 border-t border-[#d8bd8a] pt-4">
+                <span class="text-sm font-medium text-stone-600">Ask about this snack</span>
+                <a href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hi! Please share details about ${product.name}.`)}`} aria-label={`Ask about ${product.name} on WhatsApp`} title={`Ask about ${product.name} on WhatsApp`}
+                   class="icon-link inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-brand-primary transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary">
+                  <MessageCircle size={21} strokeWidth={2} aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Story -->
+  <section id="story" class="story-section kolam-divider kolam-pattern-section relative overflow-hidden border-b-4 border-[#c98a35] py-20">
+    <div class="relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-16 px-4 md:flex-row">
+      <div class="flex-1">
+        <img src="/images/All.jpeg" alt="A spread of traditional savoury snacks and sweets served in bowls and platters" class="story-image rounded-3xl" loading="lazy" decoding="async" />
+      </div>
+      <div class="flex-1">
+        <p class="eyebrow mb-3">Inspired by the Chettinad table</p>
+        <h2 class="mb-6 text-4xl font-bold leading-tight text-brand-dark">Where Karaikudi <br /><span class="text-brand-primary">meets the kolam</span></h2>
+        <p class="text-stone-600 mb-6 leading-relaxed">
+          In Karaikudi, a kolam at the threshold welcomes everyone in. That same spirit of warmth and generous hospitality inspires Karai Crunch and the snacks we love to share.
+        </p>
+        <p class="text-stone-600 mb-6 leading-relaxed">
+          We bring together bold South Indian flavours, familiar favourites, and a little modern twist—made for the tea-time table and every gathering in between.
+        </p>
+        <div class="grid grid-cols-2 gap-6 mt-8">
+          <div class="flex items-center gap-3">
+            <span class="story-check text-xl">✦</span>
+            <span class="font-medium">100% Natural Ingredients</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="story-check text-xl">✦</span>
+            <span class="font-medium">No Preservatives</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="story-check text-xl">✦</span>
+            <span class="font-medium">Hand-roasted in Small Batches</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="story-check text-xl">✦</span>
+            <span class="font-medium">Local Delivery Focus</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section kolam-divider kolam-pattern-section relative overflow-hidden py-16">
+    <div class="relative z-10 mx-auto max-w-3xl px-4 text-center">
+      <p class="eyebrow mb-3">We'd love to hear from you</p>
+      <h2 class="mb-6 text-4xl font-bold text-brand-dark">Get In Touch</h2>
+      <p class="text-stone-600 mb-12">Have a question or a custom order request? We are just a message away.</p>
+      
+      <div class="contact-card inline-block w-full rounded-3xl border p-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          <div>
+            <p class="font-bold text-brand-dark mb-2">Delivery Area</p>
+            <p class="text-stone-600">[Your Delivery Area], India</p>
+          </div>
+          <div>
+            <p class="font-bold text-brand-dark mb-2">Business Hours</p>
+            <p class="text-stone-600">Mon - Sat: 10 AM - 8 PM</p>
+          </div>
+        </div>
+        <div class="mt-10 text-center">
+          <a href={`https://wa.me/${whatsappNumber}?text=Hello! I have a query regarding my order.`} aria-label="Message us on WhatsApp" title="Message us on WhatsApp"
+             class="icon-link inline-flex h-12 w-12 items-center justify-center rounded-full text-brand-primary transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary">
+            <MessageSquareText size={24} strokeWidth={2} aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-poster-slider]").forEach((slider) => {
+    const slides = Array.from(slider.querySelectorAll<HTMLElement>("[data-poster-slide]"));
+    const previous = slider.querySelector<HTMLButtonElement>("[data-poster-previous]");
+    const next = slider.querySelector<HTMLButtonElement>("[data-poster-next]");
+    const dots = Array.from(slider.querySelectorAll<HTMLButtonElement>("[data-poster-dot]"));
+    const caption = slider.querySelector<HTMLElement>("[data-poster-caption]");
+
+    if (!slides.length || !previous || !next || !caption) return;
+
+    let activeIndex = 0;
+    const showSlide = (index: number) => {
+      activeIndex = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        slide.hidden = slideIndex !== activeIndex;
+      });
+      dots.forEach((dot, dotIndex) => {
+        dot.setAttribute("aria-pressed", String(dotIndex === activeIndex));
+      });
+      caption.textContent = slides[activeIndex].getAttribute("aria-label")?.split(": ").slice(1).join(": ") ?? "";
+    };
+
+    previous.hidden = false;
+    next.hidden = false;
+    dots.forEach((dot) => {
+      dot.hidden = false;
+      dot.addEventListener("click", () => {
+        const index = Number(dot.dataset.posterDot);
+        if (Number.isInteger(index)) showSlide(index);
+      });
+    });
+    previous.addEventListener("click", () => showSlide(activeIndex - 1));
+    next.addEventListener("click", () => showSlide(activeIndex + 1));
+    slider.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showSlide(activeIndex - 1);
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showSlide(activeIndex + 1);
+      }
+    });
+  });
+</script>
